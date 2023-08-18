@@ -7,7 +7,7 @@ import Users from './components/pages/Users';
 import History from './components/pages/History';
 import Register from './components/pages/Register';
 import UserTransfer from './components/pages/UserTransfer'
-import Deposite from './components/pages/Deposite';
+import DepositeAndWithdraw from './components/pages/DepositeAndWithdraw';
 import Login from './components/pages/Login';
 import Error from './components/pages/Error';
 
@@ -20,7 +20,7 @@ function App() {
         <Switch>
           <Route exact path="/home/user/:transfer" component={UserTransfer} />
           <Route exact path="/home/users" component={Users} />
-          <Route exact path="/home/depositeandwithdraw" component={Deposite} />
+          <Route exact path="/home/depositeandwithdraw" component={DepositeAndWithdraw} />
           <Route exact path="/home/history" component={History} />
           <Route exact path="/home/register" component={Register} />
           <Route exact path="/home" component={Home} />
