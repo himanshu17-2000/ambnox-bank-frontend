@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {  Redirect } from 'react-router-dom'
-import { db } from '../../Firebase'
 import "../../styles/History.css"
-import axios from 'axios'
 import { get_transactions } from '../clientApi'
 function History() {
     const [history, sethistory] = useState([])

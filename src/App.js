@@ -9,7 +9,7 @@ import Register from './components/pages/Register';
 import UserTransfer from './components/pages/UserTransfer'
 import DepositeAndWithdraw from './components/pages/DepositeAndWithdraw';
 import Login from './components/pages/Login';
-import Error from './components/pages/Error';
+import ErrorPage from './components/pages/ErrorPage';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/home/register" component={Register} />
           <Route exact path="/home" component={Home} />
           {/* <Route path="/" exact component={Login} /> */}
-          <Route path="*" component={Error} />
+          <Route path="*" component={ErrorPage} />
         </Switch>
       </div>
     </Router>

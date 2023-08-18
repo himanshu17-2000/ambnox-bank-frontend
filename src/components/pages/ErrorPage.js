@@ -1,7 +1,7 @@
 import React from 'react'
 import "../../styles/Error.css"
 import bhau from "../../images/bhau.png"
-function Error() {
+function ErrorPage() {
     return (
         <div className="error">
             BHIYA JI GALAT PATH KHOL DIYE AAP <br/>
@@ -11,4 +11,4 @@ function Error() {
     )
 }
 
-export default Error
+export default ErrorPage

@@ -1,6 +1,5 @@
 import React from 'react'
 import Footer from "../widgets/Footer"
-import { db } from "../../Firebase"
 import cred from "../../images/credit-card.png"
 import TextChanger from '../widgets/TextChanger'
 import "../../styles/Home.css"
@@ -8,7 +7,7 @@ import { Link } from 'react-router-dom'
 function Home() {
         return (
 
-            <div className="home">
+            <div className="home ">
                 <div className="home-contianer">
                     <div className="contianer-fluid content1">
                         <div className="row">

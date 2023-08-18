@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Redirect, useHistory } from "react-router-dom"
 import "../../styles/Login.css"
 import Particles from '../widgets/Particles';
-import { db } from "../../Firebase"
 function Login() {
     let history = useHistory();
     const [username, setusername] = useState('')

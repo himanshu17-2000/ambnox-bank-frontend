@@ -2,10 +2,7 @@
     import {  Redirect } from 'react-router-dom'
     import { useParams } from 'react-router'
     import "../../styles/Demo.css"
-    import { db , timestamp } from '../../Firebase'
     import { get_user_by_id, get_users, transferData } from '../clientApi'
-
-
     const UserTransfer = () => {
         const { transfer } = useParams()
         const from_account_id = transfer

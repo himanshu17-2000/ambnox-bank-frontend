@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import {  Redirect , useHistory } from 'react-router-dom'
 import "../../styles/Register.css"
-import { db } from "../../Firebase"
 function Register({ authorize }) {
     const history = useHistory()
     const [name, setname] = useState('')
