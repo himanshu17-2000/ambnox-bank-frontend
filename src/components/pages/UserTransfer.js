@@ -3,10 +3,10 @@
     import { useParams } from 'react-router'
     import "../../styles/Demo.css"
     import { db , timestamp } from '../../Firebase'
-    import { get_user_by_id, get_users } from '../clientApi'
+    import { get_user_by_id, get_users, transferData } from '../clientApi'
 
 
-    const Demo = () => {
+    const UserTransfer = () => {
         const { transfer } = useParams()
         const from_account_id = transfer
         const [sendingUser , setSendingUser] = useState({})
@@ -36,8 +36,16 @@
         }, [])
         // console.log(sendingUser)
         // console.log(allUsers)
-        function submithandler(e) {
+        const submithandler = async (e) =>{
             e.preventDefault()
+            const data={
+                to_account : toname,
+                from_account: from_account_id,
+                amount: parseInt(money)
+            }
+            console.log(data)   
+            const res = await transferData(data)
+            console.log(res)
 
         }
             return (
@@ -56,7 +64,7 @@
                             <option value="">customers:-</option>
                             
                             {allUsers.map(item => {
-                                return <option key={item} value={item}>{item.name}</option>
+                                return <option key={item.account} value={item.account}>{item.name}</option>
                             })}
 
                         </select>
@@ -86,4 +94,4 @@
 
 
 
-    export default Demo
+    export default UserTransfer

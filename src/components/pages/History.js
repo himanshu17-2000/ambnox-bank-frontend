@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react'
 import {  Redirect } from 'react-router-dom'
 import { db } from '../../Firebase'
 import "../../styles/History.css"
+import axios from 'axios'
+import { get_transactions } from '../clientApi'
 function History() {
     const [history, sethistory] = useState([])
-
-    function randomIntFromInterval(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    }
     useEffect(() => {
-        db.collection('history2').orderBy("series", "desc").limit(17).onSnapshot(snapshot => {
-            sethistory(snapshot.docs.map(doc => doc.data()))
-        })
-
+        const fetchUsers = async () => {
+            const historyTransactions = await get_transactions();
+            sethistory(historyTransactions);
+          };
+          fetchUsers(); 
     }, [])
 
     
@@ -21,7 +20,7 @@ function History() {
                 <h1 className="history-header">TRANSACTION HISTORY</h1>
                 <table className="tble ">
                     <tbody>
-                        <tr key={randomIntFromInterval(90000000, 1000000000)}>
+                        <tr>
                             <th>date</th>
                             <th>time</th>
                             <th>from</th>
@@ -32,12 +31,11 @@ function History() {
 
                             return (
                                 <tr key={item.time}>
-                                    <td>{item.date}</td>
-                                    <td>{item.time}</td>
+                                    <td>{item.time.split(" ")[0]}</td>
+                                    <td>{item.time.split(" ")[1]}</td>
                                     <td>{item.from}</td>
                                     <td>{item.to}</td>
-                                    <td>{item.money}</td>
-
+                                    <td>{item.amount}</td>
                                 </tr>)
 
 

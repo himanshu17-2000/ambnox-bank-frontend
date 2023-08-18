@@ -26,9 +26,9 @@ export const register_users = async (user)=>{
 
 }
 
-export const transfer = async (transaction)=>{
+export const transferData = async (transaction)=>{
     try{
-       const res = axios.post(`${URL}/transfer` , transaction)
+       const res =await axios.post(`${URL}/transfer` , transaction)
             console.log("api", res.data)
             return res.data
     }
@@ -39,9 +39,9 @@ export const transfer = async (transaction)=>{
    
     
 }
-export const get_transactions = ()=>{
+export const get_transactions = async()=>{
    try{
-       const res =  axios.get(`${URL}/get_transactions`)
+       const res = await axios.get(`${URL}/get_transactions`)
             console.log("api", res.data)
             return res.data
    }
